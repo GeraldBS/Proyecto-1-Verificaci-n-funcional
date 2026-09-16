@@ -1,0 +1,2 @@
+# para que los .sh no se dannen al pasar de windows a linux
+*.sh text eol=lf
