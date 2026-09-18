@@ -1,29 +1,25 @@
 //////////////////////////////////////////////////////////////////////
 // agent_drv: padre del manejador                                   //
 //////////////////////////////////////////////////////////////////////
-// - crea un hijo (driver) por cada terminal
-// - hace el reset del DUT
-// - recibe los paquetes del generator y los reparte al hijo que
-//   corresponde segun el campo origen
-//
-// El reset tiene que ser un pulso 0 -> 1 -> 0: el contador del
-// arbitro del DUT se resetea por flanco, si reset se queda en 1
-// desde el inicio el arbitro nunca sale de X.
+// Crea un hijo por terminal, resetea el DUT y reparte los paquetes
+// del generator segun el campo origen.
+// El reset va como pulso 0 -> 1 -> 0, el contador del arbitro se
+// resetea por flanco y si no nunca sale de X.
 //////////////////////////////////////////////////////////////////////
 
 class agent_drv;
 
   virtual bus_if vif;
 
-  packet_mbx gen_agnt_mbx;  // del generator a este padre
-  packet_mbx drv_chkr_mbx;  // al checker, lo comparten todos los hijos
+  packet_mbx gen_agnt_mbx;  // del generator
+  packet_mbx drv_chkr_mbx;  // al checker, compartido por los hijos
 
-  driver     hijos[];       // un hijo por terminal
+  driver     hijos[];
   packet_mbx buzon[];       // un mailbox por hijo
 
-  int profundidad = 8;      // tamano de cada fifo emulada
-  int repartidos  = 0;      // cuantos paquetes ha repartido
-  int descartados = 0;      // paquetes con origen invalido
+  int profundidad = 8;
+  int repartidos  = 0;
+  int descartados = 0;
 
   function new();
     hijos = new[`DRVRS];
@@ -34,12 +30,9 @@ class agent_drv;
     end
   endfunction
 
-  //////////////////////////////////////////////////////////////////
-  // deja las senales en un estado conocido y aplica el reset
-  //////////////////////////////////////////////////////////////////
   task reset_dut();
     for (int i = 0; i < `DRVRS; i++) begin
-      vif.pndng[0][i] = 0;
+      vif.pndng[0][i] = 0;   // al inicio estan en X
       vif.D_pop[0][i] = 0;
     end
 
@@ -53,9 +46,6 @@ class agent_drv;
     $display("[%0t] agent_drv: reset aplicado", $time);
   endtask
 
-  //////////////////////////////////////////////////////////////////
-  // conecta los hijos, resetea y reparte
-  //////////////////////////////////////////////////////////////////
   task run();
     packet p;
 
@@ -67,8 +57,6 @@ class agent_drv;
     end
 
     reset_dut();
-
-    // cada hijo arranca sus propios procesos
     foreach (hijos[i]) hijos[i].run();
 
     forever begin
@@ -79,14 +67,11 @@ class agent_drv;
       end
       else begin
         descartados++;
-        $display("[%0t] agent_drv: origen %0d no existe, se descarta", $time, p.origen);
+        $display("[%0t] agent_drv: origen %0d no existe", $time, p.origen);
       end
     end
   endtask
 
-  //////////////////////////////////////////////////////////////////
-  // cuantos paquetes ya tomo el DUT en total
-  //////////////////////////////////////////////////////////////////
   function int total_enviados();
     int t = 0;
     foreach (hijos[i]) t += hijos[i].enviados;
