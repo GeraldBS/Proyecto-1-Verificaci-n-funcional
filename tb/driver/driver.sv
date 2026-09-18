@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// driver: hijo del generajador, uno por terminal                     //
+// driver: hijo del manejador, uno por terminal                     //
 //////////////////////////////////////////////////////////////////////
 // Emula la fifo de entrada de un dispositivo. Guarda los paquetes
 // en una cola, levanta pndng y pone el de adelante en D_pop.
