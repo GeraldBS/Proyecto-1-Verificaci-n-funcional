@@ -20,5 +20,7 @@ typedef mailbox #(escenario) escenario_mbx;  // test -> agente
 // las clases del ambiente van despues de los mailboxes porque los usan
 `include "driver/driver.sv"
 `include "driver/agent_drv.sv"
+`include "generator/generator.sv"
+`include "env/environment.sv"
 
 `endif
