@@ -69,6 +69,8 @@ class test;
     $display("generados por el generator : %0d", e0.gen0.generados);
     $display("repartidos por el padre    : %0d", e0.agnt_drv0.repartidos);
     $display("tomados por el DUT (pop)   : %0d", e0.agnt_drv0.total_enviados());
+    $display("vistos por el monitor      : %0d", e0.agnt_mon0.total_recibidos());
+    $display("pendientes en mon_chkr_mbx : %0d", e0.mon_chkr_mbx.num());
   endtask
 
 endclass

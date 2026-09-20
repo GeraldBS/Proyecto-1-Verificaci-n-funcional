@@ -41,6 +41,8 @@ module tb_top;
   test t0;
 
   initial begin
+    // los tiempos se imprimen en ns; sin esto %t sale en ps
+    $timeformat(-9, 0, " ns", 10);
     $display("==== tb_top: PCKG_SZ=%0d DRVRS=%0d ====", pckg_sz, drvrs);
     t0 = new();
     t0.vif = _if;
