@@ -1,0 +1,76 @@
+//////////////////////////////////////////////////////////////////////
+// test: arma la cfg, arranca el ambiente y espera a que termine    //
+//////////////////////////////////////////////////////////////////////
+// Los valores se pueden cambiar sin recompilar con plusargs:
+//   ./salida +num=50 +max_delay=12 +p_bdcst=20
+//////////////////////////////////////////////////////////////////////
+
+class test;
+
+  virtual bus_if vif;
+
+  env e0;
+  cfg_mbx       tst_gen_mbx;   // mailbox con el generator
+  escenario_mbx tst_agnt_mbx;  // mailbox con el agente
+
+  function new();
+    e0           = new();
+    tst_gen_mbx  = new();
+    tst_agnt_mbx = new();
+
+    e0.tst_gen_mbx  = tst_gen_mbx;
+    e0.tst_agnt_mbx = tst_agnt_mbx;
+  endfunction
+
+  task run();
+    cfg       config_item;
+    escenario esc_item;
+    int       espera;
+
+    e0.vif = vif;
+    e0.run();              // join_none adentro, arranca el ambiente
+
+    config_item = new();
+
+    // valores por defecto, se pueden cambiar con plusargs
+    config_item.num            = 20;
+    config_item.min_delay      = 0;
+    config_item.max_delay      = 8;
+    config_item.peso_normal    = 80;
+    config_item.peso_broadcast = 10;
+    config_item.peso_error     = 10;
+    config_item.peso_propio    = 0;
+
+    void'($value$plusargs("num=%d",       config_item.num));
+    void'($value$plusargs("min_delay=%d", config_item.min_delay));
+    void'($value$plusargs("max_delay=%d", config_item.max_delay));
+    void'($value$plusargs("p_nrml=%d",    config_item.peso_normal));
+    void'($value$plusargs("p_bdcst=%d",   config_item.peso_broadcast));
+    void'($value$plusargs("p_err=%d",     config_item.peso_error));
+    void'($value$plusargs("p_prp=%d",     config_item.peso_propio));
+    void'($value$plusargs("prof=%d",      e0.profundidad));
+
+    config_item.print("test: config");
+
+    tst_gen_mbx.put(config_item);
+
+    esc_item = new();
+    tst_agnt_mbx.put(esc_item);
+
+    // espera a que el DUT haya tomado todos los paquetes
+    while (e0.agnt_drv0.total_enviados() < config_item.num)
+      @(posedge vif.clk);
+
+    // margen para que el ultimo termine de llegar a su destino
+    espera = `PCKG_SZ + 4*`DRVRS + 20;
+    repeat (espera) @(posedge vif.clk);
+
+    $display("---- resumen ----");
+    $display("generados por el generator : %0d", e0.gen0.generados);
+    $display("repartidos por el padre    : %0d", e0.agnt_drv0.repartidos);
+    $display("tomados por el DUT (pop)   : %0d", e0.agnt_drv0.total_enviados());
+    $display("vistos por el monitor      : %0d", e0.agnt_mon0.total_recibidos());
+    $display("pendientes en mon_chkr_mbx : %0d", e0.mon_chkr_mbx.num());
+  endtask
+
+endclass
