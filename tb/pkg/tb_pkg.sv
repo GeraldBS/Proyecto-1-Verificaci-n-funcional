@@ -12,6 +12,7 @@
 `include "transaction/packet.sv"
 `include "transaction/cfg.sv"
 `include "transaction/pckg_mon.sv"
+`include "transaction/trans_sb.sv"
 
 // mailboxes con tipo
 typedef mailbox #(packet)    packet_mbx;     // generator -> agente -> driver
@@ -25,6 +26,8 @@ typedef mailbox #(pckg_mon)  pckg_mon_mbx;   // monitor -> agente -> checker
 `include "generator/generator.sv"
 `include "monitor/monitor.sv"
 `include "monitor/agent_mon.sv"
+`include "scoreboard/scoreboard.sv"
+`include "checker/checker.sv"
 `include "env/environment.sv"
 
 `endif
