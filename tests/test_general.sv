@@ -26,6 +26,7 @@ class test;
     cfg       config_item;
     escenario esc_item;
     int       espera;
+    int       tope;
 
     e0.vif = vif;
     e0.run();              // join_none adentro, arranca el ambiente
@@ -61,9 +62,26 @@ class test;
     while (e0.agnt_drv0.total_enviados() < config_item.num)
       @(posedge vif.clk);
 
-    // margen para que el ultimo termine de llegar a su destino
-    espera = `PCKG_SZ + 4*`DRVRS + 20;
-    repeat (espera) @(posedge vif.clk);
+    // Espera a que no quede nada pendiente en el scoreboard, en vez de
+    // un tiempo fijo. El margen fijo se queda corto: el retraso de un
+    // paquete depende de cuantos haya adelante en el arbitro, y con
+    // mucho trafico puede ser mucho mayor que el de un paquete solo.
+    // El tope corta si de verdad se perdio algo, para no colgar la sim.
+    // primero que el scoreboard termine de anotar lo que ya salio
+    while (e0.drv_chkr_mbx.num() > 0) @(posedge vif.clk);
+
+    espera = 0;
+    tope   = (`PCKG_SZ + 4*`DRVRS + 20) * (config_item.num + 10);
+    while (e0.sb0.esperando_q.size() > 0 && espera < tope) begin
+      @(posedge vif.clk);
+      espera++;
+    end
+    if (espera >= tope)
+      $display("[%0t] test: se acabo la espera con %0d entregas pendientes",
+               $time, e0.sb0.esperando_q.size());
+
+    // unos ciclos mas por si algo venia en camino
+    repeat (20) @(posedge vif.clk);
 
     $display("---- resumen ----");
     $display("generados por el generator : %0d", e0.gen0.generados);
