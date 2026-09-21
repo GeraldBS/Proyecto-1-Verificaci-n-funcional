@@ -70,7 +70,17 @@ class test;
     $display("repartidos por el padre    : %0d", e0.agnt_drv0.repartidos);
     $display("tomados por el DUT (pop)   : %0d", e0.agnt_drv0.total_enviados());
     $display("vistos por el monitor      : %0d", e0.agnt_mon0.total_recibidos());
-    $display("pendientes en mon_chkr_mbx : %0d", e0.mon_chkr_mbx.num());
+
+    // deja que el checker termine de vaciar su mailbox
+    while (e0.mon_chkr_mbx.num() > 0) @(posedge vif.clk);
+    repeat (10) @(posedge vif.clk);
+
+    e0.chkr0.reporte();
+    e0.sb0.reporte();
+    e0.sb0.escribir_csv();
+
+    if (e0.chkr0.errores() == 0) $display("==== PRUEBA: PASS ====");
+    else $display("==== PRUEBA: FAIL (%0d errores) ====", e0.chkr0.errores());
   endtask
 
 endclass
