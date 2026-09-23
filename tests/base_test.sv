@@ -52,9 +52,23 @@ class base_test;
     e0.gen_agnt_mbx.put(p);
   endtask
 
-  // espera a que no quede nada pendiente en ningun lado
+  // Espera a que no quede nada pendiente en ningun lado.
+  //
+  // El primer paso es el que importa: hay que esperar a que el DUT
+  // haya tomado todos los paquetes que inyectamos. Si no, los que
+  // todavia estan en la cola de un hijo del driver no le han sido
+  // avisados al scoreboard, entonces esperando_q sale vacia y la
+  // espera termina sin que haya pasado nada.
   task esperar_fin(int tope_ciclos = 100000);
     int espera = 0;
+
+    while (e0.agnt_drv0.total_enviados() < sig_id && espera < tope_ciclos) begin
+      @(posedge vif.clk);
+      espera++;
+    end
+    if (espera >= tope_ciclos)
+      $display("[%0t] base_test: el DUT solo tomo %0d de %0d inyectados",
+               $time, e0.agnt_drv0.total_enviados(), sig_id);
 
     while (e0.gen_agnt_mbx.num() > 0) @(posedge vif.clk);
     while (e0.drv_chkr_mbx.num() > 0) @(posedge vif.clk);
