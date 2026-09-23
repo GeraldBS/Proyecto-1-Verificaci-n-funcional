@@ -7,10 +7,6 @@
 // El ambiente hace de FIFO de entrada y de salida de cada dispositivo:
 //  - entrada: ponemos pndng=1 y el dato en D_pop, el DUT lo saca con pop
 //  - salida: el DUT pone el dato en D_push y levanta push
-//
-// Nota del reset: el contador del arbitro tiene reset por flanco
-// (posedge rst). Si reset empieza en 1 no hay flanco y el arbitro se
-// queda en X, entonces hay que hacer un pulso 0 -> 1 -> 0.
 //////////////////////////////////////////////////////////////////////
 `include "parametros.svh"
 

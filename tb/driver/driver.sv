@@ -38,8 +38,8 @@ class driver;
   // mueve las senales de la fifo
   task manejar();
     packet p;
-    forever begin
-      @(negedge vif.clk);
+    forever begin 
+      @(negedge vif.clk); // muestra el paquete
       if (cola.size() > 0) begin
         vif.pndng[0][id] = 1;             // solo hay un bus, de ahi el [0]
         vif.D_pop[0][id] = cola[0].palabra();
@@ -48,7 +48,7 @@ class driver;
         vif.pndng[0][id] = 0;
       end
 
-      @(posedge vif.clk);
+      @(posedge vif.clk); // mira si el DUT lo tomo
       if (vif.pop[0][id] === 1'b1) begin  // el DUT ya lo tomo
         p = cola.pop_front();
         p.t_envio = $time;
