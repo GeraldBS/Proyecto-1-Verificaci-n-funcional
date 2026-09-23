@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////////////////
 // Mantiene num y max_delay con los mismos nombres que ya usa el
 // generator, y agrega lo que hace falta para el proyecto.
-// Todo esto se puede cambiar sin recompilar (ver base_test).
+// Todo esto se puede cambiar sin recompilar.
 //////////////////////////////////////////////////////////////////////
 
 class cfg;

@@ -21,7 +21,7 @@ class agent_drv;
   int repartidos  = 0;
   int descartados = 0;
 
-  function new();
+  function new(); // le pasa a cada hijo lo que necesita
     hijos = new[`DRVRS];
     buzon = new[`DRVRS];
     foreach (hijos[i]) begin
@@ -30,7 +30,7 @@ class agent_drv;
     end
   endfunction
 
-  task reset_dut();
+  task reset_dut(); // resetea el dut con un ritmo 0-1-0
     for (int i = 0; i < `DRVRS; i++) begin
       vif.pndng[0][i] = 0;   // al inicio estan en X
       vif.D_pop[0][i] = 0;
@@ -72,7 +72,7 @@ class agent_drv;
     end
   endtask
 
-  function int total_enviados();
+  function int total_enviados(); // Enviados de todos los hijos (contador)
     int t = 0;
     foreach (hijos[i]) t += hijos[i].enviados;
     return t;
