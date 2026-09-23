@@ -2,7 +2,7 @@
 // test: arma la cfg, arranca el ambiente y espera a que termine    //
 //////////////////////////////////////////////////////////////////////
 // Los valores se pueden cambiar sin recompilar con plusargs:
-//   ./salida +num=50 +max_delay=12 +p_bdcst=20
+//   ./salida +min_trans=5 +max_trans=80 +max_delay=12 +p_bdcst=20
 //////////////////////////////////////////////////////////////////////
 
 class test;
@@ -34,7 +34,8 @@ class test;
     config_item = new();
 
     // valores por defecto, se pueden cambiar con plusargs
-    config_item.num            = 20;
+    config_item.min_trans      = 1;
+    config_item.max_trans      = 10;
     config_item.min_delay      = 0;
     config_item.max_delay      = 8;
     config_item.peso_normal    = 80;
@@ -42,7 +43,8 @@ class test;
     config_item.peso_error     = 10;
     config_item.peso_propio    = 0;
 
-    void'($value$plusargs("num=%d",       config_item.num));
+    void'($value$plusargs("min_trans=%d", config_item.min_trans));
+    void'($value$plusargs("max_trans=%d", config_item.max_trans));
     void'($value$plusargs("min_delay=%d", config_item.min_delay));
     void'($value$plusargs("max_delay=%d", config_item.max_delay));
     void'($value$plusargs("p_nrml=%d",    config_item.peso_normal));
@@ -51,6 +53,12 @@ class test;
     void'($value$plusargs("p_prp=%d",     config_item.peso_propio));
     void'($value$plusargs("prof=%d",      e0.profundidad));
 
+    // aquí se sortea cuántas transacciones manda cada terminal
+    if (!config_item.randomize()) begin
+      $display("[%0t] test: fallo randomize de la cfg", $time);
+      $finish;
+    end
+
     config_item.print("test: config");
 
     tst_gen_mbx.put(config_item);
@@ -58,8 +66,11 @@ class test;
     esc_item = new();
     tst_agnt_mbx.put(esc_item);
 
-    // espera a que el DUT haya tomado todos los paquetes
-    while (e0.agnt_drv0.total_enviados() < config_item.num)
+    // espera a que el generator termine de sacarlos todos
+    while (!e0.gen0.terminado) @(posedge vif.clk);
+
+    // y a que el DUT los haya tomado
+    while (e0.agnt_drv0.total_enviados() < e0.gen0.generados)
       @(posedge vif.clk);
 
     // Espera a que no quede nada pendiente en el scoreboard, en vez de
@@ -71,7 +82,7 @@ class test;
     while (e0.drv_chkr_mbx.num() > 0) @(posedge vif.clk);
 
     espera = 0;
-    tope   = (`PCKG_SZ + 4*`DRVRS + 20) * (config_item.num + 10);
+    tope   = (`PCKG_SZ + 4*`DRVRS + 20) * (e0.gen0.generados + 10);
     while (e0.sb0.esperando_q.size() > 0 && espera < tope) begin
       @(posedge vif.clk);
       espera++;
