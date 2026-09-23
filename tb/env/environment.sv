@@ -27,7 +27,6 @@ class env;
   packet_mbx   drv_chkr_mbx;   // driver -> scoreboard
   pckg_mon_mbx mon_chkr_mbx;   // agent_mon -> checker
 
-  int profundidad = 8;         // tamano de las fifos emuladas
 
   function new();
     gen0      = new();
@@ -51,7 +50,6 @@ class env;
     agnt_drv0.vif          = vif;
     agnt_drv0.gen_agnt_mbx = gen_agnt_mbx;
     agnt_drv0.drv_chkr_mbx = drv_chkr_mbx;
-    agnt_drv0.profundidad  = profundidad;
 
     // conecta el vigilante
     agnt_mon0.vif          = vif;
