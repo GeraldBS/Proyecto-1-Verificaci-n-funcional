@@ -110,7 +110,6 @@ class test_corner extends base_test;
     end
   endtask
 
-
   //////////////////////////////////////////////////////////////////
   // 5. direcciones en los bordes del rango
   // el DUT decide con una comparacion de 8 bits, y los bordes son
@@ -212,7 +211,6 @@ class test_corner extends base_test;
     end
     esperar_fin();
   endtask
-
 
   //////////////////////////////////////////////////////////////////
   // 9. datos entrando a una fifo mientras el DUT saca de ella
