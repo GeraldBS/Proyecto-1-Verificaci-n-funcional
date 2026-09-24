@@ -14,7 +14,9 @@
 `include "parametros.svh"
 `include "interfaces/interfaz.sv"
 `include "pkg/tb_pkg.sv"
+`include "base_test.sv"
 `include "test_general.sv"
+`include "test_corner.sv"
 
 module tb_top;
 
@@ -38,15 +40,28 @@ module tb_top;
     .D_push(_if.D_push)
   );
 
-  test t0;
+  test        t0;
+  test_corner tc0;
+  string      cual = "general";   // +prueba=corner para los casos de esquina
 
   initial begin
     // los tiempos se imprimen en ns; sin esto %t sale en ps
     $timeformat(-9, 0, " ns", 10);
-    $display("==== tb_top: PCKG_SZ=%0d DRVRS=%0d ====", pckg_sz, drvrs);
-    t0 = new();
-    t0.vif = _if;
-    t0.run();
+    void'($value$plusargs("prueba=%s", cual));
+    $display("==== tb_top: PCKG_SZ=%0d DRVRS=%0d prueba=%s ====",
+             pckg_sz, drvrs, cual);
+
+    if (cual == "corner") begin
+      tc0 = new();
+      tc0.vif = _if;
+      tc0.run();
+    end
+    else begin
+      t0 = new();
+      t0.vif = _if;
+      t0.run();
+    end
+
     $display("==== fin de la prueba ====");
     $finish;
   end

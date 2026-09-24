@@ -51,7 +51,6 @@ class test;
     void'($value$plusargs("p_bdcst=%d",   config_item.peso_broadcast));
     void'($value$plusargs("p_err=%d",     config_item.peso_error));
     void'($value$plusargs("p_prp=%d",     config_item.peso_propio));
-    void'($value$plusargs("prof=%d",      e0.profundidad));
 
     // aquí se sortea cuántas transacciones manda cada terminal
     if (!config_item.randomize()) begin

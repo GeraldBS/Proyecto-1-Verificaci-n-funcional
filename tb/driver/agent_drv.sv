@@ -17,7 +17,6 @@ class agent_drv;
   driver     hijos[];
   packet_mbx buzon[];       // un mailbox por hijo
 
-  int profundidad = 8;
   int repartidos  = 0;
   int descartados = 0;
 
@@ -53,7 +52,6 @@ class agent_drv;
       hijos[i].vif          = vif;
       hijos[i].agnt_drv_mbx = buzon[i];
       hijos[i].drv_chkr_mbx = drv_chkr_mbx;
-      hijos[i].profundidad  = profundidad;
     end
 
     reset_dut();
@@ -75,6 +73,20 @@ class agent_drv;
   function int total_enviados(); // Enviados de todos los hijos (contador)
     int t = 0;
     foreach (hijos[i]) t += hijos[i].enviados;
+    return t;
+  endfunction
+
+  // esquina: el DUT nunca deberia hacer pop con la cola vacía
+  function int total_pops_vacios();
+    int t = 0;
+    foreach (hijos[i]) t += hijos[i].pops_vacios;
+    return t;
+  endfunction
+
+  // esquina: veces que entro un dato justo cuando salia otro
+  function int total_coincidencias();
+    int t = 0;
+    foreach (hijos[i]) t += hijos[i].coincidencias;
     return t;
   endfunction
 
