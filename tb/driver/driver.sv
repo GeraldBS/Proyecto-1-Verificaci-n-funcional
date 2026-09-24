@@ -22,6 +22,7 @@ class driver;
   int coincidencias = 0;   // entro un dato justo cuando salia otro
 
   time t_ultimo_push = -1; // cuando se encolo el ultimo
+  time t_ultimo_pop  = -1; // cuando salio el ultimo
 
   function new(int identificador = 0);
     this.id = identificador;
@@ -43,6 +44,16 @@ class driver;
     packet p;
     forever begin 
       @(negedge vif.clk); // muestra el paquete
+
+      // La coincidencia se revisa aqui, en negedge, y no en el mismo
+      // posedge: recibir() y manejar() corren en el mismo flanco y el
+      // orden entre ellos no esta definido, asi que en posedge la
+      // coincidencia se ve o no segun cual corrio primero.
+      if (t_ultimo_pop >= 0 && t_ultimo_pop == t_ultimo_push) begin
+        coincidencias++;
+        t_ultimo_pop = -1;
+      end
+
       if (cola.size() > 0) begin
         vif.pndng[0][id] = 1;             // solo hay un bus, de ahi el [0]
         vif.D_pop[0][id] = cola[0].palabra();
@@ -59,7 +70,7 @@ class driver;
         $display("[%0t] driver[%0d]: ERROR pop con la cola vacía", $time, id);
       end
       else if (vif.pop[0][id] === 1'b1) begin  // el DUT ya lo tomo
-        if (t_ultimo_push == $time) coincidencias++; // push y pop a la vez
+        t_ultimo_pop = $time;
         p = cola.pop_front();
         p.t_envio = $time;
         enviados++;

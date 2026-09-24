@@ -15,11 +15,11 @@
 //   6. todos los terminales mandando al mismo destino
 //   7. actividad alternante entre pares de terminales
 //   8. varios dispositivos operando a la vez, mezclando tipos
+//   9. datos entrando a una fifo mientras el DUT saca de ella
 //
-// Otros dos casos del plan no se inyectan desde aqui sino que se
-// revisan dentro del driver, porque no son estimulo sino propiedad:
+// Hay un caso del plan que no se inyecta sino que se vigila dentro
+// del driver, porque no es estimulo sino propiedad:
 //   - pop con la fifo vacía (el DUT no deberia hacerlo nunca)
-//   - push y pop en el mismo ciclo sobre la misma fifo
 //////////////////////////////////////////////////////////////////////
 
 class test_corner extends base_test;
@@ -213,6 +213,37 @@ class test_corner extends base_test;
     esperar_fin();
   endtask
 
+
+  //////////////////////////////////////////////////////////////////
+  // 9. datos entrando a una fifo mientras el DUT saca de ella
+  // primero se llena un poco y despues se alimenta de a poquitos,
+  // para que en algun ciclo coincidan el que entra y el que sale
+  //////////////////////////////////////////////////////////////////
+  task caso_push_con_pop();
+    packet p;
+    int arranque = 5;
+    int goteo    = 40;
+
+    $display("\n[%0t] === esquina 9: entran datos mientras salen otros ===",
+             $time);
+
+    // arranque: unos cuantos de una vez para que haya cola
+    for (int i = 0; i < arranque; i++) begin
+      p = armar(0, 1, 'h30 + i, 0, envio_normal);
+      inyectar(p);
+    end
+
+    // goteo: uno por ciclo, mientras el DUT va sacando
+    for (int i = 0; i < goteo; i++) begin
+      p = armar(0, 1, 'h40 + i, 1, envio_normal);
+      inyectar(p);
+    end
+
+    esperar_fin();
+    $display("[%0t]     coincidencias hasta aqui: %0d", $time,
+             e0.agnt_drv0.total_coincidencias());
+  endtask
+
   task run();
     void'($value$plusargs("max_delay=%d", max_delay));
 
@@ -227,6 +258,7 @@ class test_corner extends base_test;
     caso_todos_a_uno();
     caso_alternante();
     caso_mixto();
+    caso_push_con_pop();
 
     $display("\n---- resumen de los casos de esquina ----");
     $display("paquetes inyectados     : %0d", sig_id);
