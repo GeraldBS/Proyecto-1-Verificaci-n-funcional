@@ -6,9 +6,6 @@
 // nadie esperaba y se reporta como error.
 //////////////////////////////////////////////////////////////////////
 
-// OJO: "checker" es palabra reservada de SystemVerilog
-// (existe el bloque checker/endchecker), por eso la clase se llama
-// chequeador aunque el archivo y el bloque se sigan llamando checker.
 class chequeador;
 
   pckg_mon_mbx mon_chkr_mbx;  // del monitor
@@ -20,9 +17,9 @@ class chequeador;
   task run();
     pckg_mon m;
     forever begin
-      mon_chkr_mbx.get(m);
+      mon_chkr_mbx.get(m); // extraemos dato del monitor
       vistos++;
-      if (!sb.emparejar(m)) begin
+      if (!sb.emparejar(m)) begin // comparamos
         sin_esperar++;
         m.print("checker: ERROR nadie esperaba esta recepcion");
       end

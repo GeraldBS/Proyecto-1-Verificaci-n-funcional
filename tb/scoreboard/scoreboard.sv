@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// scoreboard: modelo de referencia y reporte                       //
+// scoreboard: modelo de referencia y reporte (base de datos)                     //
 //////////////////////////////////////////////////////////////////////
 // Recibe del driver cada paquete que salio y anota a quien deberia
 // llegarle. El checker le pregunta por cada recepcion que ve el
@@ -23,7 +23,7 @@ class scoreboard;
 
   string archivo = "reporte.csv";
 
-  task run();
+  task run(); // scoreboard lo recibe y anota
     packet p;
     forever begin
       drv_sb_mbx.get(p);
@@ -44,7 +44,7 @@ class scoreboard;
 
     enviados++;
 
-    for (int i = 0; i < `DRVRS; i++) begin
+    for (int i = 0; i < `DRVRS; i++) begin // recorre los 4 terminales y por cada uno que "debería recibirlo", crea una ficha nueva y la mete en esperando_q
       if (deberia_recibir(p, i)) begin
         r = new();
         r.id       = p.id;
@@ -102,31 +102,31 @@ class scoreboard;
   endfunction
 
   // lo que quedo esperando al final es que nunca llego
-  function int perdidos();
+  function int perdidos(); //fichas que nunca fueron emparejadas
     return esperando_q.size();
   endfunction
 
   function void escribir_csv();
     int fd;
-    fd = $fopen(this.archivo, "w");
+    fd = $fopen(this.archivo, "w"); //abre un archivo para escritura
     if (fd == 0) begin
       $display("scoreboard: no se pudo abrir %s", this.archivo);
-      return;
+      return; //chequeo evita seguir intentando escribir en un archivo que nunca se abrió
     end
     $fdisplay(fd, "%s", trans_sb::encabezado_csv());
     foreach (cerrados_q[k])  $fdisplay(fd, "%s", cerrados_q[k].linea_csv());
-    foreach (esperando_q[k]) begin
+    foreach (esperando_q[k]) begin // lo que quedó sin emparejar (esperando_q) — todavía tienen estado = esperando de cuando se crearon, antes de escribirlas, les cambia el estado a perdido
       esperando_q[k].estado = perdido;
       $fdisplay(fd, "%s", esperando_q[k].linea_csv());
     end
-    $fclose(fd);
+    $fclose(fd); // Cierra el archivo
     $display("scoreboard: reporte escrito en %s", this.archivo);
   endfunction
 
   function void reporte();
     longint suma = 0;
     longint mn = -1;
-    longint mx = 0;
+    longint mx = 0; //para calcular estadísticas de retraso: suma total, mínimo, máximo.
 
     foreach (cerrados_q[k]) begin
       if (cerrados_q[k].estado == entregado) begin

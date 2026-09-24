@@ -2,12 +2,7 @@
 // env: junta los bloques del ambiente y los conecta                //
 //////////////////////////////////////////////////////////////////////
 // Tiene generator, el manejador (agent_drv) y ahora el vigilante
-// (agent_mon). Cuando esten listos aqui entran tambien checker y
-// scoreboard.
-//
-//   test --cfg--> generator --packet--> agent_drv --> DUT --> agent_mon --pckg_mon--> checker
-//                                           |
-//                                           +--packet--> scoreboard
+// (agent_mon).
 //////////////////////////////////////////////////////////////////////
 
 class env;
@@ -21,7 +16,7 @@ class env;
   chequeador chkr0;
 
   cfg_mbx       tst_gen_mbx;   // del test al generator
-  escenario_mbx tst_agnt_mbx;  // del test al agente (todavia no se usa)
+  escenario_mbx tst_agnt_mbx;  // del test al agente 
 
   packet_mbx   gen_agnt_mbx;   // generator -> agente
   packet_mbx   drv_chkr_mbx;   // driver -> scoreboard

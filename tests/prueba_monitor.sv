@@ -1,19 +1,13 @@
 //////////////////////////////////////////////////////////////////////
 // prueba_monitor: prueba dirigida del monitor (agent_mon)          //
 //////////////////////////////////////////////////////////////////////
-// Usa el agent_drv real (igual que prueba_driver.sv) para meter los
-// mismos 5 paquetes en el DUT, pero esta vez el que revisa lo que
+// Usa el agent_drv real revisa lo que
 // sale es el agent_mon real, no un "MON" armado a mano.
 //
-// Se comparan los mismos paquetes que prueba_driver.sv a proposito:
+// Se comparan los mismos paquetes que prueba_driver.sv 
 // si esta prueba y esa coinciden en cuantos le llegan a cada
 // terminal, es una señal de que el monitor esta viendo lo mismo que
 // el DUT en verdad entrego.
-//
-// Ademas de contar, aqui se revisa CONTENIDO: que cada pckg_mon que
-// junta el agent_mon traiga el destino y el payload que se esperaba
-// para esa terminal (sin importar el orden de llegada entre
-// terminales distintas), y que t_recibido quede marcado.
 //////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ps
 
