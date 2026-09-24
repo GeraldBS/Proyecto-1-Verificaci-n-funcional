@@ -12,13 +12,16 @@ class driver;
   virtual bus_if vif;
 
   int id;               // terminal que emula
-  int profundidad = 8;  // cuantos paquetes caben en la cola
 
   packet_mbx agnt_drv_mbx;  // del padre
   packet_mbx drv_chkr_mbx;  // al checker
 
-  packet cola[$];       // la fifo emulada
-  int enviados = 0;
+  packet cola[$];       // la fifo emulada, es infinita: no tiene tope
+  int enviados      = 0;
+  int pops_vacios   = 0;   // el DUT hizo pop sin que hubiera nada
+  int coincidencias = 0;   // entro un dato justo cuando salia otro
+
+  time t_ultimo_push = -1; // cuando se encolo el ultimo
 
   function new(int identificador = 0);
     this.id = identificador;
@@ -30,8 +33,8 @@ class driver;
     forever begin
       agnt_drv_mbx.get(p);
       repeat (p.retardo) @(posedge vif.clk);
-      while (cola.size() >= profundidad) @(posedge vif.clk); // cola llena
       cola.push_back(p);
+      t_ultimo_push = $time;   // para ver si coincide con un pop
     end
   endtask
 
@@ -49,7 +52,14 @@ class driver;
       end
 
       @(posedge vif.clk); // mira si el DUT lo tomo
-      if (vif.pop[0][id] === 1'b1) begin  // el DUT ya lo tomo
+      if (vif.pop[0][id] === 1'b1 && cola.size() == 0) begin
+        // esquina: pop con la cola vacía. No deberia pasar nunca,
+        // porque en ese caso pndng esta en 0. Si pasa, es bug del DUT.
+        pops_vacios++;
+        $display("[%0t] driver[%0d]: ERROR pop con la cola vacía", $time, id);
+      end
+      else if (vif.pop[0][id] === 1'b1) begin  // el DUT ya lo tomo
+        if (t_ultimo_push == $time) coincidencias++; // push y pop a la vez
         p = cola.pop_front();
         p.t_envio = $time;
         enviados++;
