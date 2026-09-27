@@ -62,7 +62,7 @@
 0 /mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/tb/test_corner.sv
 46
 +define+DRVRS=8
-+define+PCKG_SZ=32
++define+PCKG_SZ=64
 +incdir+/mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/rtl
 +incdir+/mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/tb
 +incdir+/mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/tests
@@ -136,9 +136,9 @@ SYNOPSYS_HOME=/mnt/vol_NFS_rh003/tools
 SSH_TTY=/dev/pts/28
 SSH_CONNECTION=172.21.7.108 59688 172.21.8.7 22
 SSH_CLIENT=172.21.7.108 59688 22
-SSH_AUTH_SOCK=/tmp/ssh-LrAhrbj9J8YK/agent.2703201
+SSH_AUTH_SOCK=/run/user/1508/keyring/ssh
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SSH_AGENT_PID=2703202
+SSH_AGENT_PID=2391077
 SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
 SNPS_SIM_DEFAULT_GUI=verdi
 SNPSLMD_QUEUE=TRUE
@@ -156,8 +156,8 @@ LOADEDMODULES=
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
 HISTCONTROL=ignoredups
-GNOME_TERMINAL_SERVICE=:1.92
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/d2b3bf5d_7f52_4afb_85c9_5c1612058b6a
+GNOME_TERMINAL_SERVICE=:1.131
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/ce944c64_3755_41aa_8604_fdcb49e71375
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GJS_DEBUG_TOPICS=JS ERROR;JS LOG
 GJS_DEBUG_OUTPUT=stderr
@@ -199,5 +199,5 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1631316244 /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/liberrorinf.so
 1631316235 /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libsnpsmalloc.so
 1631316245 /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libvfs.so
-1790468056 salida.daidir
+1790546610 salida.daidir
 -1 partitionlib
