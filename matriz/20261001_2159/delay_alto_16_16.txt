@@ -1,0 +1,359 @@
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Oct  1 22:02 2026
+==== tb_top: PCKG_SZ=16 DRVRS=16 prueba=general ====
+[0 ns] test: config total=109 delay=[10:30] pesos=80/10/10/0
+      terminal 0 manda 8
+      terminal 1 manda 9
+      terminal 2 manda 10
+      terminal 3 manda 3
+      terminal 4 manda 8
+      terminal 5 manda 10
+      terminal 6 manda 2
+      terminal 7 manda 8
+      terminal 8 manda 5
+      terminal 9 manda 7
+      terminal 10 manda 9
+      terminal 11 manda 2
+      terminal 12 manda 6
+      terminal 13 manda 9
+      terminal 14 manda 10
+      terminal 15 manda 3
+[0 ns] generator: va a generar 109 paquetes
+[0 ns] generator: genero 109 paquetes
+[70 ns] agent_drv: reset aplicado
+[455 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xec t_recibido=455 ns
+[455 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xec t_recibido=455 ns
+[655 ns] monitor[7]: recibido terminal=7 destino=0x7 payload=0x8f t_recibido=655 ns
+[855 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0xb6 t_recibido=855 ns
+[1055 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0xed t_recibido=1055 ns
+[1255 ns] monitor[8]: recibido terminal=8 destino=0x8 payload=0x73 t_recibido=1255 ns
+[1455 ns] monitor[5]: recibido terminal=5 destino=0x5 payload=0x98 t_recibido=1455 ns
+[1655 ns] monitor[11]: recibido terminal=11 destino=0xb payload=0xd5 t_recibido=1655 ns
+[1855 ns] monitor[15]: recibido terminal=15 destino=0xf payload=0x6 t_recibido=1855 ns
+[2055 ns] monitor[5]: recibido terminal=5 destino=0x5 payload=0xfb t_recibido=2055 ns
+[2255 ns] monitor[15]: recibido terminal=15 destino=0xf payload=0x2e t_recibido=2255 ns
+[2455 ns] monitor[7]: recibido terminal=7 destino=0x7 payload=0xf5 t_recibido=2455 ns
+[2655 ns] monitor[12]: recibido terminal=12 destino=0xc payload=0xb5 t_recibido=2655 ns
+[3055 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0xf6 t_recibido=3055 ns
+[3255 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0x12 t_recibido=3255 ns
+[3255 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0x12 t_recibido=3255 ns
+[3455 ns] monitor[4]: recibido terminal=4 destino=0x4 payload=0xfe t_recibido=3455 ns
+[3855 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0x93 t_recibido=3855 ns
+[4055 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0x93 t_recibido=4055 ns
+[4055 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0x93 t_recibido=4055 ns
+[4255 ns] monitor[10]: recibido terminal=10 destino=0xa payload=0xb t_recibido=4255 ns
+[4855 ns] monitor[11]: recibido terminal=11 destino=0xb payload=0x21 t_recibido=4855 ns
+[5055 ns] monitor[5]: recibido terminal=5 destino=0x5 payload=0xb t_recibido=5055 ns
+[5255 ns] monitor[14]: recibido terminal=14 destino=0xe payload=0x36 t_recibido=5255 ns
+[5455 ns] monitor[11]: recibido terminal=11 destino=0xb payload=0x4e t_recibido=5455 ns
+[5655 ns] monitor[9]: recibido terminal=9 destino=0x9 payload=0x10 t_recibido=5655 ns
+[5855 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0x84 t_recibido=5855 ns
+[5855 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0x84 t_recibido=5855 ns
+[6055 ns] monitor[11]: recibido terminal=11 destino=0xb payload=0xe0 t_recibido=6055 ns
+[6255 ns] monitor[9]: recibido terminal=9 destino=0x9 payload=0x7 t_recibido=6255 ns
+[6455 ns] monitor[15]: recibido terminal=15 destino=0xf payload=0x7f t_recibido=6455 ns
+[6655 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6655 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xd3 t_recibido=6655 ns
+[6865 ns] monitor[11]: recibido terminal=11 destino=0xb payload=0x99 t_recibido=6865 ns
+[7065 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7065 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xf5 t_recibido=7065 ns
+[7265 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0xf3 t_recibido=7265 ns
+[7465 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0xed t_recibido=7465 ns
+[7665 ns] monitor[15]: recibido terminal=15 destino=0xf payload=0xfa t_recibido=7665 ns
+[7865 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0x4a t_recibido=7865 ns
+[7865 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0x4a t_recibido=7865 ns
+[8065 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xae t_recibido=8065 ns
+[8065 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xae t_recibido=8065 ns
+[8265 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xdb t_recibido=8265 ns
+[8265 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xdb t_recibido=8265 ns
+[8465 ns] monitor[15]: recibido terminal=15 destino=0xf payload=0x7c t_recibido=8465 ns
+[8665 ns] monitor[8]: recibido terminal=8 destino=0x8 payload=0x24 t_recibido=8665 ns
+[8875 ns] monitor[9]: recibido terminal=9 destino=0x9 payload=0x44 t_recibido=8875 ns
+[9075 ns] monitor[10]: recibido terminal=10 destino=0xa payload=0xb9 t_recibido=9075 ns
+[9275 ns] monitor[12]: recibido terminal=12 destino=0xc payload=0x54 t_recibido=9275 ns
+[9475 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9475 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xc6 t_recibido=9475 ns
+[9685 ns] monitor[5]: recibido terminal=5 destino=0x5 payload=0x50 t_recibido=9685 ns
+[9885 ns] monitor[12]: recibido terminal=12 destino=0xc payload=0xea t_recibido=9885 ns
+[10085 ns] monitor[12]: recibido terminal=12 destino=0xc payload=0x88 t_recibido=10085 ns
+[10295 ns] monitor[10]: recibido terminal=10 destino=0xa payload=0xfb t_recibido=10295 ns
+[10495 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0xd0 t_recibido=10495 ns
+[10695 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xac t_recibido=10695 ns
+[10695 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xac t_recibido=10695 ns
+[10905 ns] monitor[13]: recibido terminal=13 destino=0xd payload=0x56 t_recibido=10905 ns
+[11105 ns] monitor[9]: recibido terminal=9 destino=0x9 payload=0xf5 t_recibido=11105 ns
+[11315 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11315 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xb4 t_recibido=11315 ns
+[11515 ns] monitor[10]: recibido terminal=10 destino=0xa payload=0xe9 t_recibido=11515 ns
+[11715 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0xe2 t_recibido=11715 ns
+[11915 ns] monitor[6]: recibido terminal=6 destino=0x6 payload=0xd5 t_recibido=11915 ns
+[12125 ns] monitor[7]: recibido terminal=7 destino=0x7 payload=0x22 t_recibido=12125 ns
+[12325 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0xae t_recibido=12325 ns
+[12525 ns] monitor[4]: recibido terminal=4 destino=0x4 payload=0x70 t_recibido=12525 ns
+[12735 ns] monitor[7]: recibido terminal=7 destino=0x7 payload=0x22 t_recibido=12735 ns
+[12935 ns] monitor[8]: recibido terminal=8 destino=0x8 payload=0x80 t_recibido=12935 ns
+[13135 ns] monitor[14]: recibido terminal=14 destino=0xe payload=0x1f t_recibido=13135 ns
+[13345 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0xd4 t_recibido=13345 ns
+[13545 ns] monitor[4]: recibido terminal=4 destino=0x4 payload=0x9e t_recibido=13545 ns
+[13755 ns] monitor[5]: recibido terminal=5 destino=0x5 payload=0x2b t_recibido=13755 ns
+[13955 ns] monitor[12]: recibido terminal=12 destino=0xc payload=0xfa t_recibido=13955 ns
+[14155 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0x48 t_recibido=14155 ns
+[14355 ns] monitor[15]: recibido terminal=15 destino=0xf payload=0x42 t_recibido=14355 ns
+[14565 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0x7c t_recibido=14565 ns
+[14765 ns] monitor[5]: recibido terminal=5 destino=0x5 payload=0xf2 t_recibido=14765 ns
+[14965 ns] monitor[10]: recibido terminal=10 destino=0xa payload=0x63 t_recibido=14965 ns
+[15175 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0xa4 t_recibido=15175 ns
+[15375 ns] monitor[13]: recibido terminal=13 destino=0xd payload=0x85 t_recibido=15375 ns
+[15575 ns] monitor[15]: recibido terminal=15 destino=0xf payload=0xa9 t_recibido=15575 ns
+[15785 ns] monitor[13]: recibido terminal=13 destino=0xd payload=0x7 t_recibido=15785 ns
+[15985 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0x70 t_recibido=15985 ns
+[16195 ns] monitor[9]: recibido terminal=9 destino=0x9 payload=0x56 t_recibido=16195 ns
+[16405 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x59 t_recibido=16405 ns
+[16605 ns] monitor[13]: recibido terminal=13 destino=0xd payload=0x45 t_recibido=16605 ns
+[16835 ns] monitor[4]: recibido terminal=4 destino=0x4 payload=0xba t_recibido=16835 ns
+[17035 ns] monitor[8]: recibido terminal=8 destino=0x8 payload=0xdd t_recibido=17035 ns
+[17445 ns] monitor[14]: recibido terminal=14 destino=0xe payload=0xaf t_recibido=17445 ns
+[17645 ns] monitor[15]: recibido terminal=15 destino=0xf payload=0x7b t_recibido=17645 ns
+[17855 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xcc t_recibido=17855 ns
+[17855 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xcc t_recibido=17855 ns
+[18265 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0xbc t_recibido=18265 ns
+[18265 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0xbc t_recibido=18265 ns
+[18475 ns] monitor[7]: recibido terminal=7 destino=0x7 payload=0x3c t_recibido=18475 ns
+[18675 ns] monitor[4]: recibido terminal=4 destino=0x4 payload=0xe9 t_recibido=18675 ns
+[18905 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0xae t_recibido=18905 ns
+[19105 ns] monitor[12]: recibido terminal=12 destino=0xc payload=0x37 t_recibido=19105 ns
+[19315 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[4]: recibido terminal=4 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[5]: recibido terminal=5 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[6]: recibido terminal=6 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[7]: recibido terminal=7 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[8]: recibido terminal=8 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[9]: recibido terminal=9 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[10]: recibido terminal=10 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[11]: recibido terminal=11 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[12]: recibido terminal=12 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[13]: recibido terminal=13 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[14]: recibido terminal=14 destino=0xff payload=0x48 t_recibido=19315 ns
+[19315 ns] monitor[15]: recibido terminal=15 destino=0xff payload=0x48 t_recibido=19315 ns
+[19515 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0xf8 t_recibido=19515 ns
+[19715 ns] monitor[14]: recibido terminal=14 destino=0xe payload=0xe4 t_recibido=19715 ns
+[19925 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x6f t_recibido=19925 ns
+[20125 ns] monitor[13]: recibido terminal=13 destino=0xd payload=0xa1 t_recibido=20125 ns
+[20335 ns] monitor[14]: recibido terminal=14 destino=0xe payload=0x4b t_recibido=20335 ns
+[20565 ns] monitor[8]: recibido terminal=8 destino=0x8 payload=0xd7 t_recibido=20565 ns
+[20995 ns] monitor[11]: recibido terminal=11 destino=0xb payload=0x77 t_recibido=20995 ns
+[21225 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0x65 t_recibido=21225 ns
+[21425 ns] monitor[7]: recibido terminal=7 destino=0x7 payload=0xcc t_recibido=21425 ns
+[21655 ns] monitor[7]: recibido terminal=7 destino=0x7 payload=0x40 t_recibido=21655 ns
+[21925 ns] monitor[7]: recibido terminal=7 destino=0x7 payload=0x87 t_recibido=21925 ns
+[22655 ns] monitor[10]: recibido terminal=10 destino=0xa payload=0xda t_recibido=22655 ns
+---- resumen ----
+generados por el generator : 109
+repartidos por el padre    : 109
+tomados por el DUT (pop)   : 109
+vistos por el monitor      : 310
+---- checker ----
+recepciones vistas       : 310
+recepciones inesperadas  : 0
+---- scoreboard ----
+paquetes enviados        : 109
+entregas esperadas       : 310
+entregas confirmadas     : 310
+descartados a proposito  : 9
+perdidos (no llegaron)   : 0
+emparejamientos ambiguos : 1
+retraso min/prom/max     : 230 / 2495 / 3170 ns
+scoreboard: reporte escrito en reporte.csv
+==== PRUEBA: PASS ====
+==== fin de la prueba ====
+$finish called from file "/mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/tb/top/tb_top.sv", line 66.
+$finish at simulation time   22965 ns
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 22965000 ps
+CPU Time:      1.280 seconds;       Data structure size:   0.9Mb
+Thu Oct  1 22:02:21 2026

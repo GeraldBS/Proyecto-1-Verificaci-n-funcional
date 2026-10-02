@@ -1,0 +1,67 @@
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Oct  1 22:02 2026
+==== tb_top: PCKG_SZ=32 DRVRS=4 prueba=general ====
+[0 ns] test: config total=30 delay=[0:8] pesos=70/10/10/10
+      terminal 0 manda 8
+      terminal 1 manda 9
+      terminal 2 manda 10
+      terminal 3 manda 3
+[0 ns] generator: va a generar 30 paquetes
+[0 ns] generator: genero 30 paquetes
+[70 ns] agent_drv: reset aplicado
+[485 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x58f498 t_recibido=485 ns
+[845 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0x521cd5 t_recibido=845 ns
+[1205 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x9c006 t_recibido=1205 ns
+[1565 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0x3aa5fb t_recibido=1565 ns
+[1565 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x3aa5fb t_recibido=1565 ns
+[1565 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0x3aa5fb t_recibido=1565 ns
+[1925 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x32e42e t_recibido=1925 ns
+[1925 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0x32e42e t_recibido=1925 ns
+[1925 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x32e42e t_recibido=1925 ns
+[2285 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0x8fdbf5 t_recibido=2285 ns
+[2645 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0x5625b5 t_recibido=2645 ns
+[3365 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0x9ffaf6 t_recibido=3365 ns
+[4085 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0x2677fe t_recibido=4085 ns
+[4805 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x898f t_recibido=4805 ns
+[4805 ns] monitor[2]: recibido terminal=2 destino=0xff payload=0x898f t_recibido=4805 ns
+[4805 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x898f t_recibido=4805 ns
+[5165 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0xb7e3b6 t_recibido=5165 ns
+[5525 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0xe4ffed t_recibido=5525 ns
+[5895 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0x67ad73 t_recibido=5895 ns
+[6615 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0x7fc821 t_recibido=6615 ns
+[6615 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x7fc821 t_recibido=6615 ns
+[6615 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x7fc821 t_recibido=6615 ns
+[6985 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0xb67c0b t_recibido=6985 ns
+[7345 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0xdd136 t_recibido=7345 ns
+[7705 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x943d4e t_recibido=7705 ns
+[8075 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x3f4a10 t_recibido=8075 ns
+[8795 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0x9569e0 t_recibido=8795 ns
+[9165 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0xd47407 t_recibido=9165 ns
+[9525 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0xb0d47f t_recibido=9525 ns
+[10635 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0xbed393 t_recibido=10635 ns
+---- resumen ----
+generados por el generator : 30
+repartidos por el padre    : 30
+tomados por el DUT (pop)   : 30
+vistos por el monitor      : 30
+---- checker ----
+recepciones vistas       : 30
+recepciones inesperadas  : 0
+---- scoreboard ----
+paquetes enviados        : 30
+entregas esperadas       : 30
+entregas confirmadas     : 30
+descartados a proposito  : 8
+perdidos (no llegaron)   : 0
+emparejamientos ambiguos : 0
+retraso min/prom/max     : 350 / 1187 / 1410 ns
+scoreboard: reporte escrito en reporte.csv
+==== PRUEBA: PASS ====
+==== fin de la prueba ====
+$finish called from file "/mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/tb/top/tb_top.sv", line 66.
+$finish at simulation time   10975 ns
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 10975000 ps
+CPU Time:      1.010 seconds;       Data structure size:   0.7Mb
+Thu Oct  1 22:02:56 2026

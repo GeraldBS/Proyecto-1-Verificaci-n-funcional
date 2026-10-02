@@ -1,0 +1,36 @@
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Oct  1 22:01 2026
+==== tb_top: PCKG_SZ=16 DRVRS=4 prueba=general ====
+[0 ns] test: config total=30 delay=[0:8] pesos=0/0/100/0
+      terminal 0 manda 8
+      terminal 1 manda 9
+      terminal 2 manda 10
+      terminal 3 manda 3
+[0 ns] generator: va a generar 30 paquetes
+[0 ns] generator: genero 30 paquetes
+[70 ns] agent_drv: reset aplicado
+---- resumen ----
+generados por el generator : 30
+repartidos por el padre    : 30
+tomados por el DUT (pop)   : 30
+vistos por el monitor      : 0
+---- checker ----
+recepciones vistas       : 0
+recepciones inesperadas  : 0
+---- scoreboard ----
+paquetes enviados        : 30
+entregas esperadas       : 0
+entregas confirmadas     : 0
+descartados a proposito  : 30
+perdidos (no llegaron)   : 0
+emparejamientos ambiguos : 0
+scoreboard: reporte escrito en reporte.csv
+==== PRUEBA: PASS ====
+==== fin de la prueba ====
+$finish called from file "/mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/tb/top/tb_top.sv", line 66.
+$finish at simulation time    6335 ns
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 6335000 ps
+CPU Time:      0.920 seconds;       Data structure size:   0.7Mb
+Thu Oct  1 22:01:28 2026

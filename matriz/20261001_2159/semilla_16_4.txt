@@ -1,0 +1,57 @@
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Oct  1 22:01 2026
+==== tb_top: PCKG_SZ=16 DRVRS=4 prueba=general ====
+[0 ns] test: config total=19 delay=[0:8] pesos=80/10/10/0
+      terminal 0 manda 3
+      terminal 1 manda 3
+      terminal 2 manda 10
+      terminal 3 manda 3
+[0 ns] generator: va a generar 19 paquetes
+[0 ns] generator: genero 19 paquetes
+[70 ns] agent_drv: reset aplicado
+[295 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0x45 t_recibido=295 ns
+[495 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x74 t_recibido=495 ns
+[695 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0x34 t_recibido=695 ns
+[895 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0x54 t_recibido=895 ns
+[1095 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0xfd t_recibido=1095 ns
+[1295 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x19 t_recibido=1295 ns
+[1495 ns] monitor[2]: recibido terminal=2 destino=0x2 payload=0xe3 t_recibido=1495 ns
+[1695 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0x65 t_recibido=1695 ns
+[1895 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0xee t_recibido=1895 ns
+[2095 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0xf6 t_recibido=2095 ns
+[2295 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0xfd t_recibido=2295 ns
+[2495 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0x13 t_recibido=2495 ns
+[2745 ns] monitor[3]: recibido terminal=3 destino=0x3 payload=0xc5 t_recibido=2745 ns
+[2995 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0x4e t_recibido=2995 ns
+[3245 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0x55 t_recibido=3245 ns
+[3495 ns] monitor[1]: recibido terminal=1 destino=0x1 payload=0xb9 t_recibido=3495 ns
+[3745 ns] monitor[0]: recibido terminal=0 destino=0xff payload=0x3c t_recibido=3745 ns
+[3745 ns] monitor[1]: recibido terminal=1 destino=0xff payload=0x3c t_recibido=3745 ns
+[3745 ns] monitor[3]: recibido terminal=3 destino=0xff payload=0x3c t_recibido=3745 ns
+[4245 ns] monitor[0]: recibido terminal=0 destino=0x0 payload=0xcf t_recibido=4245 ns
+---- resumen ----
+generados por el generator : 19
+repartidos por el padre    : 19
+tomados por el DUT (pop)   : 19
+vistos por el monitor      : 20
+---- checker ----
+recepciones vistas       : 20
+recepciones inesperadas  : 0
+---- scoreboard ----
+paquetes enviados        : 19
+entregas esperadas       : 20
+entregas confirmadas     : 20
+descartados a proposito  : 1
+perdidos (no llegaron)   : 0
+emparejamientos ambiguos : 0
+retraso min/prom/max     : 190 / 490 / 780 ns
+scoreboard: reporte escrito en reporte.csv
+==== PRUEBA: PASS ====
+==== fin de la prueba ====
+$finish called from file "/mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/tb/top/tb_top.sv", line 66.
+$finish at simulation time    4555 ns
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 4555000 ps
+CPU Time:      0.840 seconds;       Data structure size:   0.7Mb
+Thu Oct  1 22:01:32 2026

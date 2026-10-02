@@ -1,0 +1,48 @@
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Oct  1 22:07 2026
+==== tb_top: PCKG_SZ=64 DRVRS=16 prueba=general ====
+[0 ns] test: config total=109 delay=[0:8] pesos=0/0/100/0
+      terminal 0 manda 8
+      terminal 1 manda 9
+      terminal 2 manda 10
+      terminal 3 manda 3
+      terminal 4 manda 8
+      terminal 5 manda 10
+      terminal 6 manda 2
+      terminal 7 manda 8
+      terminal 8 manda 5
+      terminal 9 manda 7
+      terminal 10 manda 9
+      terminal 11 manda 2
+      terminal 12 manda 6
+      terminal 13 manda 9
+      terminal 14 manda 10
+      terminal 15 manda 3
+[0 ns] generator: va a generar 109 paquetes
+[0 ns] generator: genero 109 paquetes
+[70 ns] agent_drv: reset aplicado
+---- resumen ----
+generados por el generator : 109
+repartidos por el padre    : 109
+tomados por el DUT (pop)   : 109
+vistos por el monitor      : 0
+---- checker ----
+recepciones vistas       : 0
+recepciones inesperadas  : 0
+---- scoreboard ----
+paquetes enviados        : 109
+entregas esperadas       : 0
+entregas confirmadas     : 0
+descartados a proposito  : 109
+perdidos (no llegaron)   : 0
+emparejamientos ambiguos : 0
+scoreboard: reporte escrito en reporte.csv
+==== PRUEBA: PASS ====
+==== fin de la prueba ====
+$finish called from file "/mnt/vol_NFS_rh003/Est_Veri_II2026/PEREZ_SANDOVAL_LEONARDO_VeriII26/Proyecto-1-Verificaci-n-funcional/tb/top/tb_top.sv", line 66.
+$finish at simulation time   73005 ns
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 73005000 ps
+CPU Time:      4.220 seconds;       Data structure size:   1.4Mb
+Thu Oct  1 22:07:34 2026
